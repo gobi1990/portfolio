@@ -1,3 +1,9 @@
+This portfolio website is developed using Next.js and Tailwind CSS, showcasing a responsive, modern design.
+
+Deployed URL - 
+[http://gobi-portfolio-seven.vercel.app]
+
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
