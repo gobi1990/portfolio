@@ -34,13 +34,6 @@ export default function Home() {
         <p className="text-xl text-dark-onBackground mb-8">Mobile App Developer | Game Developer | Front-end Developer</p>
         
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
-        {/* <button
-          type="submit"
-          className="inline-flex items-center px-4 py-2 border border-transparent text-base font-medium rounded-md shadow-sm text-dark-onPrimary bg-dark-primary hover:bg-dark-secondary focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-dark-secondary"
-        >
-          <Download  className="w-5 h-5 mr-2" />
-          Send Message
-        </button> */}
         <Link
           href="/contact"
           className="inline-flex items-center bg-dark-primary hover:bg-dark-secondary text-dark-onPrimary font-bold py-2 px-4 rounded transition-colors"

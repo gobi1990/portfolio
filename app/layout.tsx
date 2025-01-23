@@ -44,7 +44,7 @@ export default function RootLayout({
             © {new Date().getFullYear()} Gobishankar Annalingam. All rights reserved.
           </div>
         </footer>
-        <Script
+        {/* <Script
           id="header-scroll"
           strategy="afterInteractive"
           dangerouslySetInnerHTML={{
@@ -52,7 +52,7 @@ export default function RootLayout({
               (${initHeaderScroll.toString()})();
             `,
           }}
-        />
+        /> */}
       </body>
     </html>
     </ScrollProvider>
@@ -92,28 +92,28 @@ function Navigation() {
   );
 }
 
-function initHeaderScroll() {
-  const header = document.getElementById('header');
-  let lastScrollTop = 0;
+// function initHeaderScroll() {
+//   const header = document.getElementById('header');
+//   let lastScrollTop = 0;
 
-  window.addEventListener('scroll', () => {
-    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+//   window.addEventListener('scroll', () => {
+//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-      header.style.transform = 'translateY(-100%)';
-    } else {
-      header.style.transform = 'translateY(0)';
-    }
+//     if (scrollTop > lastScrollTop) {
+//       header.style.transform = 'translateY(-100%)';
+//     } else {
+//       header.style.transform = 'translateY(0)';
+//     }
 
-    if (scrollTop === 0) {
-      header.classList.remove('py-2');
-      header.classList.add('py-4');
-    } else {
+//     if (scrollTop === 0) {
+//       header.classList.remove('py-2');
+//       header.classList.add('py-4');
+//     } else {
   
-      header.classList.remove('py-4');
-      header.classList.add('py-2');
-    }
+//       header.classList.remove('py-4');
+//       header.classList.add('py-2');
+//     }
 
-    lastScrollTop = scrollTop;
-  });
-}
+//     lastScrollTop = scrollTop;
+//   });
+// }
