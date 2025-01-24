@@ -6,6 +6,7 @@ import Link from 'next/link'
 import Projects from './projects/page'
 import Contact from './contact/page'
 import { useRef } from 'react'
+import CustomButton from './components/customButton'
 
 import { useScroll } from "./ScrollContext";
 import { Download } from 'lucide-react';
@@ -19,7 +20,7 @@ export default function Home() {
       <section className="text-center mb-16">
         <div className="relative w-48 h-48 mx-auto mb-4"> 
           <Image
-            src="/placeholder.svg"
+            src="/portfolio-image.jpeg"
             alt="porfolio image"
             layout="fill"
             objectFit="cover"
@@ -34,18 +35,21 @@ export default function Home() {
         <p className="text-xl text-dark-onBackground mb-8">Mobile App Developer | Game Developer | Front-end Developer</p>
         
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
+        
         <Link
           href="/contact"
-          className="inline-flex items-center bg-dark-primary hover:bg-dark-secondary text-dark-onPrimary font-bold py-2 px-4 rounded transition-colors"
-        >
+          className="inline-flex items-center bg-dark-primary hover:bg-dark-secondary text-dark-onPrimary font-bold py-2 px-4 rounded transition-colors">
           <Download  className="w-5 h-5 mr-2" />
-          Download Resume
+          Resume
         </Link>
-        <Link
+        {/* <Link
           href="/contact"
           className="bg-dark-primary hover:bg-dark-secondary text-dark-onPrimary font-bold py-2 px-4 rounded transition-colors"
         >
           Get in Touch
+        </Link> */}
+        <Link href="/contact">
+        <CustomButton title="Get In Touch"/>
         </Link>
         </div>
       </section>
