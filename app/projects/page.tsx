@@ -11,7 +11,7 @@ import PopupModal from '../components/modal/popupModal'
 export default function Projects() {
   const [isMounted, setIsMounted] = useState(false)
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const [selectedProject, setSelectedProject] = useState(null);
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
 
   const handleProjectClick = (project : Project) => {
     setSelectedProject(project);
