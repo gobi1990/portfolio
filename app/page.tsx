@@ -9,11 +9,16 @@ import { useRef } from 'react'
 import CustomButton from './components/customButton'
 
 import { useScroll } from "./ScrollContext";
-import { Download } from 'lucide-react';
-import BusinessCard from './components/businessCard'
+import { CircleArrowRight, Download } from 'lucide-react';
 
 export default function Home() {
   const { homeRef, projectsRef, contactRef } = useScroll();
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    if (ref.current) {
+      ref.current.scrollIntoView({ behavior: 'smooth' });
+    }   
+
+  }
 
   return (
     <div className="flex flex-col items-center">
@@ -28,41 +33,23 @@ export default function Home() {
           />
           
          </div>
-        {/* <div className="relative w-48 h-48">
-          <BusinessCard />
-          </div> */}
         <h1 className="text-4xl font-bold mb-4 text-dark-primary">Gobishankar Annalingam</h1>
         <p className="text-xl text-dark-onBackground mb-8">Mobile App Developer | Game Developer | Front-end Developer</p>
         
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
-        
-        <Link
-          href="/contact"
-          className="inline-flex items-center bg-dark-primary hover:bg-dark-secondary text-dark-onPrimary font-bold py-2 px-4 rounded transition-colors">
-          <Download  className="w-5 h-5 mr-2" />
-          Resume
-        </Link>
-        {/* <Link
-          href="/contact"
-          className="bg-dark-primary hover:bg-dark-secondary text-dark-onPrimary font-bold py-2 px-4 rounded transition-colors"
-        >
-          Get in Touch
-        </Link> */}
-        <Link href="/contact">
-        <CustomButton title="Get In Touch"/>
-        </Link>
+        <CustomButton title="Resume" icon={<Download className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(projectsRef)}/>
+        <CustomButton title="Get In Touch" icon={<CircleArrowRight className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(contactRef)}/>
+
         </div>
       </section>
       <section className="w-full max-w-6xl glass-effect p-8">
         <h2 className="text-2xl font-bold mb-4 text-dark-secondary">About Me</h2>
         <p className="text-dark-onBackground mb-8">
-          I'm a passionate mobile app developer with expertise in creating intuitive and engaging user experiences.
-          With a strong background in both iOS and Android development, I bring ideas to life through clean,
-          efficient code and beautiful design.
+        As a dedicated & passionate Mobile App | Game | Unity | XR Developer with 8 years of experience in the software industry, I bring a rich skillset to the team, specializing in Mobile App Development , VR/XR Development, Game Design & Development and 3D Modeling.
         </p>
         <h2 className="text-2xl font-bold mb-4 text-dark-secondary">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {['React Native', 'Swift', 'Kotlin', 'JavaScript', 'TypeScript', 'UI/UX Design'].map((skill) => (
+          {['React Native', 'Flutter', 'Unity3D', 'Kotlin', 'JavaScript', 'TypeScript', 'UI/UX Design'].map((skill) => (
             <div key={skill} className="bg-dark-surface rounded-lg p-3 text-center text-dark-onSurface">
               {skill}
             </div>

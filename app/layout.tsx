@@ -2,7 +2,7 @@ import Link from 'next/link'
 import './globals.css'
 import Script from 'next/script'
 import { inter, poppins, poppinsMedium } from './utils/fonts'
-import { ScrollProvider, } from './ScrollContext'
+import { ScrollProvider, useScroll, } from './ScrollContext'
 
 
 export const metadata = {
@@ -15,6 +15,9 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
+
+
+
 
   return (
     <ScrollProvider>
@@ -60,13 +63,14 @@ export default function RootLayout({
 }
 
 function Navigation() {
- // const { homeRef, projectsRef, contactRef, scrollToSection } = useScroll();
+
+  //const { scrollToSection } = useScroll();
+  
 
   return (
     <ul className={`flex space-x-4 ${poppinsMedium.className}`}>
       <li>
         <button
-          // onClick={() => scrollToSection(homeRef)}
           className={`text-dark-onBackground hover:text-dark-primary transition-colors`}
         >
           Home
@@ -74,15 +78,13 @@ function Navigation() {
       </li>
       <li>
         <button
-          // onClick={() => scrollToSection(projectsRef)}
-          className="text-dark-onBackground hover:text-dark-primary transition-colors"
+          className="text-dark-onBackground hover:text-dark-primary transition-colors" 
         >
           Projects
         </button>
       </li>
       <li>
         <button
-          // onClick={() => scrollToSection(contactRef)}
           className="text-dark-onBackground hover:text-dark-primary transition-colors"
         >
           Contact
@@ -91,29 +93,3 @@ function Navigation() {
     </ul>
   );
 }
-
-// function initHeaderScroll() {
-//   const header = document.getElementById('header');
-//   let lastScrollTop = 0;
-
-//   window.addEventListener('scroll', () => {
-//     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-//     if (scrollTop > lastScrollTop) {
-//       header.style.transform = 'translateY(-100%)';
-//     } else {
-//       header.style.transform = 'translateY(0)';
-//     }
-
-//     if (scrollTop === 0) {
-//       header.classList.remove('py-2');
-//       header.classList.add('py-4');
-//     } else {
-  
-//       header.classList.remove('py-4');
-//       header.classList.add('py-2');
-//     }
-
-//     lastScrollTop = scrollTop;
-//   });
-// }

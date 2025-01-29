@@ -1,12 +1,12 @@
 "use client";
 
-import React, { createContext, useContext, useRef } from "react";
+import { createContext, useContext, useRef } from "react";
 
 type ScrollContextType = {
   homeRef: React.RefObject<HTMLElement>;
   projectsRef: React.RefObject<HTMLElement>;
   contactRef: React.RefObject<HTMLElement>;
-  scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
+  scrollToSection: (section: "home" | "projects" | "contact") => void;
 };
 
 const ScrollContext = createContext<ScrollContextType | null>(null);
@@ -16,14 +16,21 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   const projectsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
 
-  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    ref.current?.scrollIntoView({ behavior: "smooth" });
+  const scrollToSection = (section: "home" | "projects" | "contact") => {
+    const sectionRef =
+      section === "home"
+        ? homeRef
+        : section === "projects"
+        ? projectsRef
+        : contactRef;
+
+    if (sectionRef.current) {
+      sectionRef.current.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
-    <ScrollContext.Provider
-      value={{ homeRef, projectsRef, contactRef, scrollToSection }}
-    >
+    <ScrollContext.Provider value={{ homeRef, projectsRef, contactRef, scrollToSection }}>
       {children}
     </ScrollContext.Provider>
   );
