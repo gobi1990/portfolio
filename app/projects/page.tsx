@@ -13,6 +13,13 @@ interface ProjectsProps {
 
 
 export default function Projects({ onProjectClick }: ProjectsProps) {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) return null;
   
 
   return (
