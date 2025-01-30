@@ -2,12 +2,9 @@
 
 import { useState, useEffect } from 'react'
 import { gameProjects, mobileProjects, Project } from '../data/projects'
-import ProjectCard from '../components/projectCard/projectCard'
 import HoverProjectCard from '../components/hoverProjectCard/hoverProjectCard'
-import HoverCard from '../components/hoverCard'
-import PopupModal from '../components/modal/popupModal'
 
-export interface ProjectsProps {
+interface ProjectsProps {
   onProjectClick: (project: Project) => void;
 }
 
