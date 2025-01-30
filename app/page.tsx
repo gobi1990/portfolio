@@ -5,20 +5,33 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Projects from './projects/page'
 import Contact from './contact/page'
-import { useRef } from 'react'
+import { useCallback, useRef, useState } from 'react'
 import CustomButton from './components/customButton'
 
 import { useScroll } from "./ScrollContext";
 import { CircleArrowRight, Download } from 'lucide-react';
+import { Project } from './data/projects';
+import PopupModal from './components/modal/popupModal';
 
 export default function Home() {
   const { homeRef, projectsRef, contactRef } = useScroll();
-  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: 'smooth' });
-    }   
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const selectedProjectRef = useRef<Project | null>(null);
 
-  }
+
+  const scrollToSection = useCallback((ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
+  }, []);
+
+  const handleProjectClick = useCallback((project: Project) => {
+    selectedProjectRef.current = project;
+    setIsModalOpen(true);
+  }, []);
+
+  const handleCloseModal = useCallback(() => {
+    setIsModalOpen(false);
+    selectedProjectRef.current = null;
+  }, []);
 
   return (
     <div className="flex flex-col items-center">
@@ -57,11 +70,12 @@ export default function Home() {
         </div>
       </section>
       <section ref={projectsRef} className="mt-20 w-full max-w-6xl glass-effect p-8">
-        <Projects />
+      <Projects onProjectClick={handleProjectClick} />
       </section>
       <section ref={contactRef} className="mt-20 w-full max-w-3xl p-8">
         <Contact />
       </section>
+      <PopupModal isOpen={isModalOpen} onClose={handleCloseModal} project={selectedProjectRef.current} />
     </div>
   )
 }
