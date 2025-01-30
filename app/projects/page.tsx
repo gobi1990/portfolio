@@ -7,12 +7,12 @@ import HoverProjectCard from '../components/hoverProjectCard/hoverProjectCard'
 import HoverCard from '../components/hoverCard'
 import PopupModal from '../components/modal/popupModal'
 
-interface ProjectsProps {
+export interface ProjectsProps {
   onProjectClick: (project: Project) => void;
 }
 
 
-export default function Projects({ onProjectClick }:  { onProjectClick: (project: Project) => void}) {
+export default function Projects({ onProjectClick }:  ProjectsProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
