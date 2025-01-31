@@ -1,3 +1,5 @@
+'use client'
+
 import { useState, useEffect } from 'react'
 import { gameProjects, mobileProjects, Project } from '../data/projects'
 import HoverProjectCard from '../components/hoverProjectCard/hoverProjectCard'
@@ -7,7 +9,7 @@ interface ProjectsProps {
 }
 
 
-export default function Projects({ onProjectClick = () => {} }: ProjectsProps) {
+export default function Projects({ onProjectClick }:  ProjectsProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
