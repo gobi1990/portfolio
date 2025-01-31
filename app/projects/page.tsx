@@ -1,5 +1,3 @@
-'use client'
-
 import { useState, useEffect } from 'react'
 import { gameProjects, mobileProjects, Project } from '../data/projects'
 import HoverProjectCard from '../components/hoverProjectCard/hoverProjectCard'
