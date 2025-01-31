@@ -9,7 +9,7 @@ interface ProjectsProps {
 }
 
 
-export default function Projects({ onProjectClick }:  ProjectsProps) {
+export default function Projects({ onProjectClick = () => {} }: ProjectsProps) {
   const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
