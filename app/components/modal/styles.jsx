@@ -7,7 +7,7 @@ export const StyledWrapper = styled.div`
     left: 0;
     right: 0;
     bottom: 0;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.8);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,13 +15,19 @@ export const StyledWrapper = styled.div`
   }
 
   .modal-content {
-    background: #fff;
+    // background: white;
+    object-fit: cover;
+    opacity: 0.99;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     padding: 20px;
     border-radius: 8px;
     max-width: 80%;
     width: 80%;
+    max-height: 80%;
+    height: 80%;
     position: relative;
     display: flex;
+    flex-direction: column;
   }
 
   .close-button {
@@ -39,9 +45,26 @@ export const StyledWrapper = styled.div`
     width: 100%;
   }
 
+  .img-container {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100%;
+   }
+
+
   .modal-image img {
-    max-width: 40%;
+    position: absolute;
+    max-width: 18%;
     border-radius: 8px;
+    object-fit: cover;
+  }
+
+   .mask-image img {
+   position: absolute;
+    max-width: 25%;
+    border-radius: 8px;
+    
   }
 
   .modal-text {

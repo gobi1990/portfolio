@@ -5,13 +5,14 @@ import Image from 'next/image'
 import Link from 'next/link'
 import Projects from './projects/page'
 import Contact from './contact/page'
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import CustomButton from './components/customButton'
 
 import { useScroll } from "./ScrollContext";
 import { CircleArrowRight, Download } from 'lucide-react';
 import { Project } from './data/projects';
 import PopupModal from './components/modal/popupModal';
+import { Analytics } from "@vercel/analytics/react"
 
 export default function Home() {
   const { homeRef, projectsRef, contactRef } = useScroll();
@@ -33,10 +34,19 @@ export default function Home() {
     selectedProjectRef.current = null;
   }, []);
 
+  useEffect(() => {
+    if (isModalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+  }, [isModalOpen]);
+
   return (
     <div className="flex flex-col items-center">
       <section className="text-center mb-16">
         <div className="relative w-48 h-48 mx-auto mb-4"> 
+          <Analytics />
           <Image
             src="/portfolio-image.jpeg"
             alt="porfolio image"
