@@ -80,7 +80,7 @@ export default function Home() {
         </div>
       </section>
       <section ref={projectsRef} className="mt-20 w-full max-w-6xl glass-effect p-8">
-      <Projects onProjectClick={handleProjectClick} />
+      <Projects  />
       </section>
       <section ref={contactRef} className="mt-20 w-full max-w-3xl p-8">
         <Contact />
