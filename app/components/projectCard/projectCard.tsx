@@ -42,7 +42,7 @@ export default function ProjectCard({ project }: { project: Project }) {
           <h2 className="text-xl font-bold mb-2 text-dark-secondary">{project.title}</h2>
           <p className="text-dark-onBackground mb-4">{project.description}</p>
           <a
-            href={project.github}
+            href={project.link}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center text-dark-primary hover:text-dark-secondary"
