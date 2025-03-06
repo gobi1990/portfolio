@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Project } from '../../data/projects';
 import { StyledWrapper} from './styles';
+import Image from 'next/image';
 
 const HoverProjectCard = ({ project , onClick}: { project: Project  , onClick?: () => void} ) => {
   const [transform, setTransform] = useState('translate(0, 0)')
@@ -32,7 +33,14 @@ const HoverProjectCard = ({ project , onClick}: { project: Project  , onClick?: 
         >
         <div className="card">
           <div className="img-content">
-            <img src={project.image} alt={project.title} />
+            {/* <img src={project.image} alt={project.title} /> */}
+            <Image
+                src={project.image}
+                alt="Image from Google Drive"
+                width={500}
+                height={300} 
+                layout="responsive" 
+            />
           </div>
           <div className="content">
             <p className="heading">{project.title}</p>

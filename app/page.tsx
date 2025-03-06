@@ -13,6 +13,7 @@ import { CircleArrowRight, Download } from 'lucide-react';
 import { Project } from './data/projects';
 import PopupModal from './components/modal/popupModal';
 import { Analytics } from "@vercel/analytics/react"
+import { STRINGS } from './constants/strings';
 
 export default function Home() {
   const { homeRef, projectsRef, contactRef } = useScroll();
@@ -68,7 +69,7 @@ export default function Home() {
       <section className="w-full max-w-6xl glass-effect p-8">
         <h2 className="text-2xl font-bold mb-4 text-dark-secondary">About Me</h2>
         <p className="text-dark-onBackground mb-8">
-        As a dedicated & passionate Mobile App | Game | Unity | XR Developer with 8 years of experience in the software industry, I bring a rich skillset to the team, specializing in Mobile App Development , VR/XR Development, Game Design & Development and 3D Modeling.
+        {STRINGS.PORT_DESCRIPTION}
         </p>
         <h2 className="text-2xl font-bold mb-4 text-dark-secondary">Skills</h2>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-4">

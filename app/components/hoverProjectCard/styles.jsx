@@ -52,7 +52,8 @@ export const StyledWrapper = styled.div`
     justify-content: center;
     text-align: center;
     gap: 10px;
-    color: #e8e8e8;
+    color:rgb(38, 35, 35);
+    font-family: 'Poppins', sans-serif;
     padding: 20px;
     line-height: 1.5;
     border-radius: 5px;
@@ -66,8 +67,8 @@ export const StyledWrapper = styled.div`
     font-size: 32px;
     font-weight: 700;
     font-family: 'Poppins', sans-serif;
-    color: #04ccc5;
-    text-shadow: #fff 2px 0 10px;
+    color:rgb(41, 226, 214);
+    text-shadow: #3b3938 1px 0 15px;
   }
 
   .card:hover .content {
