@@ -6,8 +6,8 @@ import { ScrollProvider, useScroll, } from './ScrollContext'
 
 
 export const metadata = {
-  title: 'Gobishankar Annalingam - Mobile App Developer',
-  description: 'Portfolio showcasing mobile app development projects',
+  title: 'Gobishankar Annalingam - Mobile App | FrontEnd | Game Developer',
+  description: 'Portfolio showcasing mobile app , web app & game development projects',
 }
 
 export default function RootLayout({

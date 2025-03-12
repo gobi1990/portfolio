@@ -2,14 +2,13 @@
 
 
 import Image from 'next/image'
-import Link from 'next/link'
 import Projects from './projects/page'
 import Contact from './contact/page'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import CustomButton from './components/customButton'
 
 import { useScroll } from "./ScrollContext";
-import { CircleArrowRight, Download } from 'lucide-react';
+import { CircleArrowRight, Download , Linkedin} from 'lucide-react';
 import { Project } from './data/projects';
 import PopupModal from './components/modal/popupModal';
 import { Analytics } from "@vercel/analytics/react"
@@ -63,7 +62,11 @@ export default function Home() {
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
         <CustomButton title="Resume" icon={<Download className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(projectsRef)}/>
         <CustomButton title="Get In Touch" icon={<CircleArrowRight className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(contactRef)}/>
-
+        <CustomButton 
+            title="LinkedIn" 
+            icon={<Linkedin className="w-5 h-5 mr-2" />}
+            onClick={() => window.open('https://www.linkedin.com/in/annamgobi1990/', '_blank')}
+          />
         </div>
       </section>
       <section className="w-full max-w-6xl glass-effect p-8">
