@@ -24,7 +24,7 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <body className={`${inter.className} bg-dark-background text-dark-onBackground`}>
       <header
-            className="sticky top-0 z-50 transition-all duration-200 glass-effect"
+            className="sticky top-0 z-50 transition-all duration-200 glass-effect-without-border"
             id="header"
           >
             <div className="container mx-auto px-4 py-4 flex justify-between items-center">
@@ -42,7 +42,7 @@ export default function RootLayout({
         <main className="container mx-auto px-4 py-8">
           {children}
         </main>
-        <footer className="bg-dark-surface py-4 mt-8">
+        <footer className="bg-dark-surface py-4 mt-8 glass-effect-without-border">
           <div className="container mx-auto px-4 text-center text-dark-onSurface">
             © {new Date().getFullYear()} Gobishankar Annalingam. All rights reserved.
           </div>
