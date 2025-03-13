@@ -6,13 +6,13 @@ import Projects from './projects/page'
 import Contact from './contact/page'
 import { useCallback, useEffect, useRef, useState } from 'react'
 import CustomButton from './components/customButton'
-
+import { inter, poppins, poppinsMedium } from './utils/fonts'
 import { useScroll } from "./ScrollContext";
-import { CircleArrowRight, Download , Linkedin} from 'lucide-react';
+import { CircleArrowRight, Download , Github, Linkedin} from 'lucide-react';
 import { Project } from './data/projects';
 import PopupModal from './components/modal/popupModal';
 import { Analytics } from "@vercel/analytics/react"
-import { STRINGS } from './constants/strings';
+import {  SKILLS, STRINGS } from './constants/strings';
 
 export default function Home() {
   const { homeRef, projectsRef, contactRef } = useScroll();
@@ -45,17 +45,16 @@ export default function Home() {
   return (
     <div className="flex flex-col items-center">
       <section className="text-center mb-16">
-        <div className="relative w-48 h-48 mx-auto mb-4"> 
-          <Analytics />
-          <Image
-            src="/portfolio-image.jpeg"
-            alt="porfolio image"
-            layout="fill"
-            objectFit="cover"
-            className="rounded-full"
-          />
-          
-         </div>
+      <div className="relative w-48 h-48 mx-auto mb-4 border-2 border-white rounded-full overflow-hidden">
+      <Analytics />
+      <Image
+      src="/portfolio-image.jpeg"
+      alt="portfolio image"
+      layout="fill" 
+      objectFit="cover"
+      className="rounded-full"
+        />
+       </div>
         <h1 className="text-4xl font-bold mb-4 text-dark-primary">Gobishankar Annalingam</h1>
         <p className="text-xl text-dark-onBackground mb-8">Mobile App Developer | Game Developer | Front-end Developer</p>
         
@@ -67,17 +66,22 @@ export default function Home() {
             icon={<Linkedin className="w-5 h-5 mr-2" />}
             onClick={() => window.open('https://www.linkedin.com/in/annamgobi1990/', '_blank')}
           />
+          <CustomButton 
+            title="Github" 
+            icon={<Github className="w-5 h-5 mr-2" />}
+            onClick={() => window.open('https://github.com/gobi1990', '_blank')}
+          />
         </div>
       </section>
       <section className="w-full max-w-6xl glass-effect p-8">
-        <h2 className="text-2xl font-bold mb-4 text-dark-secondary">About Me</h2>
-        <p className="text-dark-onBackground mb-8">
+        <h2 className={`text-2xl font-bold mb-4 text-dark-secondary ${poppins.className}`}>About Me</h2>
+        <p className={`text-dark-onBackground mb-8 ${poppinsMedium.className} `}>
         {STRINGS.PORT_DESCRIPTION}
         </p>
         <h2 className="text-2xl font-bold mb-4 text-dark-secondary">Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-          {['React Native', 'Flutter', 'Unity3D', 'Kotlin', 'JavaScript', 'TypeScript', 'UI/UX Design'].map((skill) => (
-            <div key={skill} className="bg-dark-surface rounded-lg p-3 text-center text-dark-onSurface">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+          {SKILLS.map((skill) => (
+            <div key={skill} className={ `bg-dark-surface glass-effect rounded-lg p-3 text-center text-dark-onSurface ${poppinsMedium.className} ` }>
               {skill}
             </div>
           ))}

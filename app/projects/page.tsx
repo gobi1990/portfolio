@@ -3,9 +3,9 @@
 import { useState, useEffect, useMemo } from 'react'
 import { gameProjects, mobileProjects, Project } from '../data/projects'
 import HoverProjectCard from '../components/hoverProjectCard/hoverProjectCard'
+import { PROJECT_TAGS } from '../constants/strings'
 
 const allProjects: Project[] = [...mobileProjects, ...gameProjects]
-const allTags = ['All', 'Flutter' , 'Android' , 'iOS' , 'Javascript' , ]
 
 export default function Projects() {
   const [isMounted, setIsMounted] = useState(false)
@@ -58,7 +58,7 @@ export default function Projects() {
       <h1 className="text-3xl font-bold mb-8 text-dark-primary">My Projects</h1>
 
       <div className="flex flex-wrap gap-3 mb-8">
-        {allTags.map((tag) => (
+        {PROJECT_TAGS.map((tag) => (
           <button
             key={tag}
             onClick={() => setSelectedTag(tag)}

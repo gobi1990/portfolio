@@ -13,7 +13,7 @@ export interface Project {
       description: 'Showcase popular and trending movies and user will be able to search movies by title.',
       image: 'https://drive.google.com/uc?export=view&id=1ocFRRUbqlRqZ0x5CFL8S_RASMijaPh7Y',
       link: 'https://github.com/gobi1990/flutter_trendee_moviez',
-      tags: ['Flutter', 'Android', 'iOS', 'Mobile App', 'Dart'],
+      tags: ['Flutter / Dart', 'Android', 'iOS', 'Mobile App', 'Dart'],
       id: undefined
     },
     {

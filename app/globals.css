@@ -10,13 +10,41 @@
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  @apply bg-dark-background text-dark-onBackground;
+  position: relative; 
+  min-height: 100vh; 
+  margin: 0;
+}
+
+body::before {
+  content: '';
+  position: fixed; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExc2V3OGUzNnJiMzZjaXA1Z20wbzBhZzlsdWJ1N2d5eHJxMXIxeHJ4cCZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/l3q2RgN7WUjeUUXm0/giphy.gif');
+  background-size: contain; 
+  background-position: center;
+  background-repeat: repeat;
+  z-index: -2;
+}
+
+
+body::after {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(5, 10, 30, 0.7); 
+  z-index: -1; 
+}
+
+header, main, footer {
+  position: relative;
+  z-index: 10; 
 }
 
 .glass-effect {
@@ -33,4 +61,15 @@ body {
 .project-card:hover {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+stars-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none; 
+  z-index: -1; 
+  background: radial-gradient(circle, #1a1a2e 0%, #0a0a14 100%); /* Optional gradient */
 }
