@@ -44,7 +44,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center">
-      <section className="text-center mb-16">
+      <section ref={homeRef} className="text-center mb-16">
       <div className="relative w-48 h-48 mx-auto mb-4 border-2 border-white rounded-full overflow-hidden">
       <Analytics />
       <Image
@@ -60,7 +60,6 @@ export default function Home() {
         
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
         <CustomButton title="Resume" icon={<Download className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(projectsRef)}/>
-        <CustomButton title="Get In Touch" icon={<CircleArrowRight className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(contactRef)}/>
         <CustomButton 
             title="LinkedIn" 
             icon={<Linkedin className="w-5 h-5 mr-2" />}
@@ -71,6 +70,7 @@ export default function Home() {
             icon={<Github className="w-5 h-5 mr-2" />}
             onClick={() => window.open('https://github.com/gobi1990', '_blank')}
           />
+          <CustomButton title="Get In Touch" icon={<CircleArrowRight className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(contactRef)}/>
         </div>
       </section>
       <section className="w-full max-w-6xl glass-effect p-8">
@@ -79,7 +79,7 @@ export default function Home() {
         {STRINGS.PORT_DESCRIPTION}
         </p>
         <h2 className="text-2xl font-bold mb-4 text-dark-secondary">Skills</h2>
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
+        <div className="grid md:grid-cols-6 gap-4">
           {SKILLS.map((skill) => (
             <div key={skill} className={ `bg-dark-surface glass-effect rounded-lg p-3 text-center text-dark-onSurface ${poppinsMedium.className} ` }>
               {skill}

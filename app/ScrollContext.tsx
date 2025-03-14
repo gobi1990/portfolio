@@ -1,32 +1,23 @@
-"use client";
+'use client'; 
 
-import { createContext, useContext, useRef } from "react";
+import { createContext, useContext, useRef, ReactNode } from 'react';
 
 type ScrollContextType = {
   homeRef: React.RefObject<HTMLElement>;
   projectsRef: React.RefObject<HTMLElement>;
   contactRef: React.RefObject<HTMLElement>;
-  scrollToSection: (section: "home" | "projects" | "contact") => void;
+  scrollToSection: (ref: React.RefObject<HTMLElement>) => void;
 };
 
-const ScrollContext = createContext<ScrollContextType | null>(null);
+const ScrollContext = createContext<ScrollContextType | undefined>(undefined);
 
-export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
+export function ScrollProvider({ children }: { children: ReactNode }) {
   const homeRef = useRef<HTMLElement>(null);
   const projectsRef = useRef<HTMLElement>(null);
   const contactRef = useRef<HTMLElement>(null);
 
-  const scrollToSection = (section: "home" | "projects" | "contact") => {
-    const sectionRef =
-      section === "home"
-        ? homeRef
-        : section === "projects"
-        ? projectsRef
-        : contactRef;
-
-    if (sectionRef.current) {
-      sectionRef.current.scrollIntoView({ behavior: "smooth" });
-    }
+  const scrollToSection = (ref: React.RefObject<HTMLElement>) => {
+    ref.current?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -34,12 +25,12 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
       {children}
     </ScrollContext.Provider>
   );
-};
+}
 
-export const useScroll = () => {
+export function useScroll() {
   const context = useContext(ScrollContext);
   if (!context) {
-    throw new Error("useScroll must be used within a ScrollProvider");
+    throw new Error('useScroll must be used within a ScrollProvider');
   }
   return context;
-};
+}

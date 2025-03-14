@@ -33,7 +33,6 @@ const HoverProjectCard = ({ project , onClick}: { project: Project  , onClick?: 
         >
         <div className="card">
           <div className="img-content">
-            {/* <img src={project.image} alt={project.title} /> */}
             <Image
                 src={project.image}
                 alt="Image from Google Drive"

@@ -1,8 +1,8 @@
 import Link from 'next/link'
 import './globals.css'
-import Script from 'next/script'
 import { inter, poppins, poppinsMedium } from './utils/fonts'
 import { ScrollProvider, useScroll, } from './ScrollContext'
+import { NavBarNavigation } from './components/navigation'
 
 
 export const metadata = {
@@ -15,8 +15,6 @@ export default function RootLayout({
 }: {
   children: React.ReactNode
 }) {
-
-
 
 
   return (
@@ -35,7 +33,7 @@ export default function RootLayout({
                 Gobishankar Portfolio
               </Link>
               <nav>
-                <Navigation />
+                <NavBarNavigation />
               </nav>
             </div>
           </header>
@@ -60,36 +58,4 @@ export default function RootLayout({
     </html>
     </ScrollProvider>
   )
-}
-
-function Navigation() {
-
-  //const { scrollToSection } = useScroll();
-  
-
-  return (
-    <ul className={`flex space-x-4 ${poppinsMedium.className}`}>
-      <li>
-        <button
-          className={`text-dark-onBackground hover:text-dark-primary transition-colors`}
-        >
-          Home
-        </button>
-      </li>
-      <li>
-        <button
-          className="text-dark-onBackground hover:text-dark-primary transition-colors" 
-        >
-          Projects
-        </button>
-      </li>
-      <li>
-        <button
-          className="text-dark-onBackground hover:text-dark-primary transition-colors"
-        >
-          Contact
-        </button> 
-      </li>
-    </ul>
-  );
 }
