@@ -29,6 +29,18 @@ export default function Home() {
     setIsModalOpen(true);
   }, []);
 
+  const resumeDownload = () => {
+  
+  const fileId= process.env.NEXT_PUBLIC_RESUME_ID
+  const fileUrl = `https://drive.usercontent.google.com/download?id=${fileId}&export=download`; 
+    const link = document.createElement('a');
+    link.href = fileUrl;
+    link.target = '_blank'; 
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const handleCloseModal = useCallback(() => {
     setIsModalOpen(false);
     selectedProjectRef.current = null;
@@ -59,7 +71,7 @@ export default function Home() {
         <p className="text-xl text-dark-onBackground mb-8">Mobile App Developer | Game Developer | Front-end Developer</p>
         
         <div className="flex flex-col md:flex-row gap-10 justify-center items-center">
-        <CustomButton title="Resume" icon={<Download className="w-5 h-5 mr-2"  />} onClick={() => scrollToSection(projectsRef)}/>
+        <CustomButton title="Resume" icon={<Download className="w-5 h-5 mr-2"  />} onClick={resumeDownload}/>
         <CustomButton 
             title="LinkedIn" 
             icon={<Linkedin className="w-5 h-5 mr-2" />}
