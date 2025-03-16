@@ -17,11 +17,11 @@ export interface Project {
       id: undefined
     },
     {
-      title: 'Project 2',
-      description: 'Project 2 Description',
-      image: '/placeholder.svg',
-      link: 'https://github.com/user/project2',
-      tags: ['React Native', 'Android', 'iOS', 'Mobile App', 'Javascript'],
+      title: 'Squeezy Jelly Run',
+      description: 'Android Mobile Game which is created using Unity3D.',
+      image: 'https://drive.google.com/uc?export=view&id=1c83WgMPNDGUseZZFoQxe3uSWmqyD_Alh',
+      link: 'https://www.youtube.com/watch?v=7xI3uVB7uqA',
+      tags: ['Unity3D', 'Android', 'C#', 'Game'],
       id: undefined
     },
     {
