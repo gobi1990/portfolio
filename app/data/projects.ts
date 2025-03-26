@@ -36,7 +36,7 @@ export interface Project {
       title: 'PS Games',
       description: 'Showcase popular PlayStation games with details and user will be able to search & favorite games.',
       image: 'https://drive.google.com/uc?export=view&id=13c92OkBE74T62perlnbv1cAHynI9YqLH',
-      link: 'https://github.com/user/project3',
+      link: 'https://github.com/gobi1990/ps_games_mobile',
       tags: [],
       id: undefined
     },
