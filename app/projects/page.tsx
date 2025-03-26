@@ -1,11 +1,11 @@
 'use client'
 
 import { useState, useEffect, useMemo } from 'react'
-import { gameProjects, mobileProjects, Project } from '../data/projects'
+import { Project, projects } from '../data/projects'
 import HoverProjectCard from '../components/hoverProjectCard/hoverProjectCard'
 import { PROJECT_TAGS } from '../constants/strings'
 
-const allProjects: Project[] = [...mobileProjects, ...gameProjects]
+const allProjects: Project[] = [...projects]
 
 export default function Projects() {
   const [isMounted, setIsMounted] = useState(false)
