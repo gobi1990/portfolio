@@ -37,7 +37,15 @@ export interface Project {
       description: 'Showcase popular PlayStation games with details and user will be able to search & favorite games.',
       image: 'https://drive.google.com/uc?export=view&id=13c92OkBE74T62perlnbv1cAHynI9YqLH',
       link: 'https://github.com/gobi1990/ps_games_mobile',
-      tags: [],
+      tags: [ 'Flutter / Dart' , 'Android' , 'iOS' , 'Mobile App' , 'Dart'],
+      id: undefined
+    },
+    {
+      title: 'Coffee Shop POS System',
+      description: 'Point Of Sale system for a coffee shop using Next.js and Tailwind CSS.',
+      image: 'https://drive.google.com/uc?export=view&id=1-7lwgUGZJ5m1ZDf0oiKZM5rtPy5GfgEa',
+      link: 'https://coffeeshop-pos.vercel.app/',
+      tags: [ 'React / Next.js' , 'Web Apps' , 'React' , 'Next.js' , 'Tailwind CSS' , 'Javascript' , 'TypeScript' , 'CSS'],
       id: undefined
     },
   ];
