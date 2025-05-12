@@ -1,5 +1,5 @@
 export const STRINGS = {
-    PORT_DESCRIPTION: "As a dedicated & passionate Mobile App | Game | Unity | XR Developer with 8 years of experience in the software industry, I bring a rich skillset to the team, specializing in Mobile App Development , VR/XR Development, Game Design & Development and 3D Modeling.",
+    PORT_DESCRIPTION: "Accomplished Web, Mobile, and Game Developer with over 8 years of experience in the software industry, specializing in creating innovative, user-centric solutions. Proficient in Web Development, Mobile Application Design, Game Development , Interactive XR development, and 3D Modeling, I deliver high-quality, scalable digital experiences that blend creativity and technical expertise to meet diverse client needs.",
   } as const; 
 
 export const PROJECT_TAGS = [
