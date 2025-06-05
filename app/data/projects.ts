@@ -9,6 +9,22 @@ export interface Project {
   
   export const projects: Project[] = [
     {
+      title: 'Coffee Shop POS System',
+      description: 'Point Of Sale system for a coffee shop using Next.js and Tailwind CSS.',
+      image: 'https://drive.google.com/uc?export=view&id=1bUx0hlRaCNgZAnctKJdOyFweUji0UTZG',
+      link: 'https://coffeeshop-pos.vercel.app/',
+      tags: [ 'React / Next.js' , 'Web Apps' , 'React' , 'Next.js' , 'Tailwind CSS' , 'Javascript' , 'TypeScript' , 'CSS'],
+      id: undefined
+    },
+    {
+      title: 'Production Tracking System',
+      description: 'Production Tracking System for Manufacturing company using Next.js and Tailwind CSS.',
+      image: 'https://drive.google.com/uc?export=view&id=1txJ3uergwF0BP__xFvl5TNsxoSf2oCQC',
+      link: 'https://pfc-job-manager.vercel.app/',
+      tags: [ 'React / Next.js' , 'Web Apps' , 'React' , 'Next.js' , 'Tailwind CSS' , 'Javascript' , 'TypeScript' , 'CSS'],
+      id: undefined
+    },
+    {
       title: 'Trendee Moviez',
       description: 'Showcase popular and trending movies and user will be able to search movies by title.',
       image: 'https://drive.google.com/uc?export=view&id=1ocFRRUbqlRqZ0x5CFL8S_RASMijaPh7Y',
@@ -38,14 +54,6 @@ export interface Project {
       image: 'https://drive.google.com/uc?export=view&id=13c92OkBE74T62perlnbv1cAHynI9YqLH',
       link: 'https://github.com/gobi1990/ps_games_mobile',
       tags: [ 'Flutter / Dart' , 'Android' , 'iOS' , 'Mobile App' , 'Dart'],
-      id: undefined
-    },
-    {
-      title: 'Coffee Shop POS System',
-      description: 'Point Of Sale system for a coffee shop using Next.js and Tailwind CSS.',
-      image: 'https://drive.google.com/uc?export=view&id=1-7lwgUGZJ5m1ZDf0oiKZM5rtPy5GfgEa',
-      link: 'https://coffeeshop-pos.vercel.app/',
-      tags: [ 'React / Next.js' , 'Web Apps' , 'React' , 'Next.js' , 'Tailwind CSS' , 'Javascript' , 'TypeScript' , 'CSS'],
       id: undefined
     },
   ];
