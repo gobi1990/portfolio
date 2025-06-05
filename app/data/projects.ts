@@ -9,7 +9,7 @@ export interface Project {
   
   export const projects: Project[] = [
     {
-      title: 'Coffee Shop POS System',
+      title: 'Coffee Shop POS Admin System',
       description: 'Point Of Sale system for a coffee shop using Next.js and Tailwind CSS.',
       image: 'https://drive.google.com/uc?export=view&id=1bUx0hlRaCNgZAnctKJdOyFweUji0UTZG',
       link: 'https://coffeeshop-pos.vercel.app/',
